@@ -13,7 +13,7 @@ Following steps are taken to reach at a scalable and repeatable working solution
 def  main(req: func.HttpRequest,context: func.Context) -> func.HttpResponse:
 	return  func.WsgiMiddleware(app.wsgi_app).handle(req,context)
 ```
-4. The Function App is integrated with the Azure Key Vault which holds the credentials for connectivity with both Synapse and Redis Cache using the following steps <br />
+4. The Function App is integrated with the Azure Key Vault which holds the credentials for connectivity with both Synapse and Redis Cache using the following steps: <br />
 			- Creation of Azure Key Vault if it does not exist <br />
 			- Enabling system assigned managed identity for Azure Function App  <br />
 			- In the Azure Key Vault, addition of access policy for the Azure Function Managed Identity with all the required permissions  
